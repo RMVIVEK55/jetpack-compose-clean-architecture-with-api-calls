@@ -32,7 +32,7 @@ class MainActivity : ComponentActivity() {
     private val loginViewModel by viewModels<LoginViewModel>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+//cicd
         enableEdgeToEdge()
         setContent {
             LoginmvvmTheme {
