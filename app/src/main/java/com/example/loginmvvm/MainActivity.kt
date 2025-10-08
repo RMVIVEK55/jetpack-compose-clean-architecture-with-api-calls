@@ -49,10 +49,10 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun LoginScreen(loginViewModel: LoginViewModel, modifier: Modifier = Modifier) {
-    val userDetails by loginViewModel.loginUser.collectAsState()
-    val isLoggedIn by loginViewModel.isLoggedIn.collectAsState()
-    val loginError by loginViewModel.loginError.collectAsState()
-   // AppNavigation()
+//    val userDetails by loginViewModel.loginUser.collectAsState()
+//    val isLoggedIn by loginViewModel.isLoggedIn.collectAsState()
+//    val loginError by loginViewModel.loginError.collectAsState()
+    AppNavigation()//
 //    Column(
 //        modifier
 //            .fillMaxWidth()
