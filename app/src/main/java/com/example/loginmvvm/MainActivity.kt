@@ -16,6 +16,9 @@ import androidx.compose.ui.Modifier
 import com.example.loginmvvm.mycleanarch.presentation.EmpAppNavigationHost
 
 import com.example.loginmvvm.ui.theme.LoginmvvmTheme
+import com.microsoft.appcenter.AppCenter
+import com.microsoft.appcenter.analytics.Analytics
+import com.microsoft.appcenter.crashes.Crashes
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -23,7 +26,8 @@ class MainActivity : ComponentActivity() {
     private val loginViewModel by viewModels<LoginViewModel>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        AppCenter.start(application, "ccb32053-0aef-472a-9852-9cf9a5cc17b5",
+            Analytics::class.java, Crashes::class.java)
         enableEdgeToEdge()
         setContent {
             LoginmvvmTheme {

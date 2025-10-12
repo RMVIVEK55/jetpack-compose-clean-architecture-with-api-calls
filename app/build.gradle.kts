@@ -92,6 +92,10 @@ dependencies {
     implementation(libs.moshi.converter)
 
 
+    implementation(libs.appcenter.analytics)
+    implementation(libs.appcenter.crashes)
+
+
 
 
 
