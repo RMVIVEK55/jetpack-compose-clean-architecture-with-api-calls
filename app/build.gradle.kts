@@ -1,7 +1,12 @@
+import org.gradle.kotlin.dsl.libs
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.kotlinKapt)
+    alias(libs.plugins.daggerHiltAndroid)
+
 }
 
 android {
@@ -40,6 +45,12 @@ android {
 }
 
 dependencies {
+    kapt(libs.hilt.compiler)
+    kapt(libs.hilt.android.compiler)
+   annotationProcessor(libs.androidx.hilt.compiler)
+    implementation(libs.hilt.navigation.compose)
+    implementation(libs.kotlinx.coroutines.core)
+    //ksp(libs.moshi.codegen) // if using @JsonClass(generateAdapter = true)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -58,6 +69,30 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+    implementation(libs.appcenter.analytics)
+    implementation(libs.appcenter.crashes)
+
+    // retrofit
+    implementation(libs.retrofit)
+    implementation(libs.converter.jackson)
+    implementation(libs.converter.scalars)
+    implementation(libs.logging.interceptor)
+    implementation(libs.okhttp)
+    implementation(libs.retrofit.gson)
+
+    implementation(libs.coil)
+    implementation(libs.coil.network.okhttp)
+    implementation(libs.coil.compose)
+    implementation(libs.coil.svg)
+
+    implementation(libs.hilt.android)
+
+    implementation(libs.moshi)
+    implementation(libs.moshi.kotlin)
+    implementation(libs.moshi.converter)
+
+
+
 
 
 

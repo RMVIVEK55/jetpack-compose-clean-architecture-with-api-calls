@@ -9,7 +9,43 @@ lifecycleRuntimeKtx = "2.9.4"
 activityCompose = "1.10.1"
 composeBom = "2024.04.01"
 navigation = "2.9.5"
+appcenter = "5.0.4"
+hiltAndroid = "2.52"
+hiltCompiler = "1.2.0"
+hiltAndroidCompiler = "2.52"
+retrofit = "2.11.0"
+converterJackson = "2.11.0"
+converterScalars = "2.11.0"
+loggingInterceptor = "4.12.0"
+coil = "3.0.0-alpha09"
+kotlinKapt = "1.9.25"
+moshi = "1.15.0"
+ksp = "1.9.0-1.0.12"
+hiltNavigationCompose = "1.2.0"
+kotlinxCoroutinesCore = "1.8.1"
 [libraries]
+
+moshi = { module = "com.squareup.moshi:moshi", version.ref = "moshi" }
+moshi-kotlin = { module = "com.squareup.moshi:moshi-kotlin", version.ref = "moshi" }
+
+moshi-converter = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "retrofit" }
+
+logging-interceptor = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "loggingInterceptor" }
+okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "loggingInterceptor" }
+coil = { group = "io.coil-kt.coil3", name = "coil", version.ref = "coil" }
+coil-network-okhttp = { module = "io.coil-kt.coil3:coil-network-okhttp", version.ref = "coil" }
+coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coil"}
+coil-svg = { module = "io.coil-kt.coil3:coil-svg", version.ref = "coil" }
+hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroid" }
+hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hiltAndroidCompiler" }
+hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hiltAndroid" }
+androidx-hilt-compiler = { module = "androidx.hilt:hilt-compiler", version.ref = "hiltCompiler" }
+retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+converter-jackson = { module = "com.squareup.retrofit2:converter-jackson", version.ref = "converterJackson" }
+retrofit-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
+converter-scalars = { module = "com.squareup.retrofit2:converter-scalars", version.ref = "converterScalars" }
+appcenter-analytics = { group = "com.microsoft.appcenter", name = "appcenter-analytics", version.ref = "appcenter" }
+appcenter-crashes = { group = "com.microsoft.appcenter", name = "appcenter-crashes", version.ref = "appcenter" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
@@ -28,10 +64,15 @@ androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-toolin
 androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hiltNavigationCompose" }
+kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinxCoroutinesCore" }
 
 
 [plugins]
+
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+kotlinKapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlinKapt" }
+daggerHiltAndroid = { id = "com.google.dagger.hilt.android", version.ref = "hiltAndroid" }
 
