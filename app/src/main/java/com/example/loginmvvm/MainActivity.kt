@@ -31,6 +31,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             LoginmvvmTheme {
+                               Analytics.trackEvent("called MainActivity")
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     LoginScreen(
                         loginViewModel = loginViewModel,
