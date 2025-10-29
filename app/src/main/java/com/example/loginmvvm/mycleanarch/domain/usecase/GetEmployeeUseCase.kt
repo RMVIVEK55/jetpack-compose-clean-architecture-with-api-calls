@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.flowOn
 import javax.inject.Inject
 
 class GetEmployeeUseCase @Inject constructor(private val repositoryImpl: RepositoryImpl) {
- fun invoke() : Flow<UiState<List<Employee>>> = flow {
+ operator fun invoke() : Flow<UiState<List<Employee>>> = flow {
     emit(UiState.Loading())
     try{
         emit(UiState.Success(data = repositoryImpl.getEmployee()))
@@ -19,5 +19,5 @@ class GetEmployeeUseCase @Inject constructor(private val repositoryImpl: Reposit
     {
         emit(UiState.Error(message = e.message.toString()))
     }
-}.flowOn(Dispatchers.IO)
+}
 }
